@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>똑똑! 수학탐험대 리더보드</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-trophy"></i> 똑똑! 수학탐험대 리더보드</h1>
+            <p>우리 반의 점수 랭킹을 실시간으로 확인해요!</p>
+        </header>
+
+        <main>
+            <div class="card setup-section">
+                <h4><i class="fas fa-search"></i> 우리 반 리더보드 찾기</h4>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="grade-select">학년</label>
+                        <select id="grade-select">
+                            <option value="">-- 학년 선택 --</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="class-select">반</label>
+                        <select id="class-select">
+                            <option value="">-- 반 선택 --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card add-score-section" id="add-score-section" style="display: none;">
+                 <h4><i class="fas fa-pencil-alt"></i> 점수 등록하기</h4>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="player-name-input">이름</label>
+                        <input type="text" id="player-name-input" placeholder="이름을 입력해요">
+                    </div>
+                    <div class="input-group">
+                        <label for="player-score-input">점수</label>
+                        <input type="number" id="player-score-input" placeholder="점수를 입력해요">
+                    </div>
+                    <button class="btn" onclick="addScore()">점수 올리기!</button>
+                </div>
+            </div>
+
+            <div id="leaderboard-container">
+                <!-- 선택된 리더보드가 여기에 표시됩니다 -->
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 노형초등학교 이선진. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
